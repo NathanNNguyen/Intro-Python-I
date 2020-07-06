@@ -31,15 +31,35 @@ import sys
 import calendar
 from datetime import datetime
 
-year = 2020
-month = 7
-# print(sys.argv[0])
+# When users pass arguments into sys.argv
+# they'll turn into string so we have to
+# use int() on them so they take in an int
 
-if len(sys.argv) == 2:
-    print(calendar.month(year, int(sys.argv[1])))
-elif len(sys.argv) > 2:
-    print(calendar.month(int(sys.argv[2]), int(sys.argv[1])))
-elif len(sys.argv) == 1:
-    print(calendar.month(year, month))
+num_args = len(sys.argv)
+month = datetime.now().month
+year = datetime.now().year
+
+# if no args:
+if num_args == 1:
+    # print current month & year
+    pass
+
+# if 1 arg:
+elif num_args == 2:
+    # assume that user's input is the month
+    # print current year and user's input month
+    month = int(sys.argv[1])
+
+# if 2 args:
+elif num_args == 3:
+    # print both user's inputs
+    year = int(sys.argv[2]) 
+    month = int(sys.argv[1])
+
+# otherwise:
 else:
-    print('Please use "python 14_cal.py [month] [year]" to run this program.')
+    # print a usage statement
+    print(f'Use "python3 14_cal.py [month] [year]" to run this program.')
+    sys.exit(1)
+
+print(calendar.month(year, month))

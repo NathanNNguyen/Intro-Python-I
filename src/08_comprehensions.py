@@ -36,6 +36,11 @@ print(y)
 x = input("Enter comma-separated numbers: ").split(',')
 
 # What do you need between the square brackets to make it work?
-y = [int(char) for char in x if int(char) % 2 == 0]
+
+# When we do int(char) % 2 == 0
+# char is now turned into an int
+# so we don't have to do change
+# its type again in the beginning
+y = [char for char in x if int(char) % 2 == 0]
 
 print(y)

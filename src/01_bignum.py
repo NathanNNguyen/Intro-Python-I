@@ -3,7 +3,6 @@
 
 # YOUR CODE HERE
 
-my_num = [65536]
-
-squares = [num*num for num in my_num]
-print(squares)
+num = 2
+num_squares = 2**65536
+print(num_squares)

@@ -37,8 +37,9 @@ print("Distance is: {:.2f}".format(dist(a, b)))
 
 # YOUR CODE HERE
 def print_tuple(my_list):
-    for x in list(my_list):
-        print(x)
+
+    # Using list comprehension
+    [print(x) for x in list(my_list)]
 
 
 t = (1, 2, 5, 7, 99)

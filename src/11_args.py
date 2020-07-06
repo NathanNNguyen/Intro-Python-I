@@ -20,6 +20,7 @@ print(f1(1, 2))
 
 
 def f2(*args):
+    # arbitrary args come through as LIST
     # Define a variable == 0 so we can add x to it
     result = 0
     # Iterating over the Python args tuple
@@ -36,7 +37,7 @@ print(f2(7, 9, 1, 3, 4, 9, 0))  # Should print 33
 a = [7, 6, 5, 4]
 
 # How do you have to modify the f2 call below to make this work?
-print(f2(sum(a)))    # Should print 22
+print(f2(*a))    # Should print 22
 
 # Write a function f3 that accepts either one or two arguments. If one argument,
 # it returns that value plus 1. If two arguments, it returns the sum of the
@@ -46,7 +47,7 @@ print(f2(sum(a)))    # Should print 22
 # YOUR CODE HERE
 
 
-def f3(x, y=0):
+def f3(x, y=1):
     if(y == 0):
         return x + 1
     else:
@@ -68,6 +69,8 @@ print(f3(8))     # Should print 9
 # YOUR CODE HERE
 
 def f4(**kwargs):
+
+    # keyword args come through as DICT
     for key, value in kwargs.items():
         print(f'key: {key}, value: {value}')
 
